@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+
+@theme inline {
+  --font-sans: "Inter", sans-serif;
+}
+
+@theme {
+  --color-accent: #fffdd0;
+  --color-primary: #212121;
+  --color-placeholder: #d2d2d2;
+  --color-secondary: #013220;
+  --color-secondary-light: #004225;
+}
+
+html{
+scroll-behavior: smooth;
+}
+
+body {
+  @apply text-sm font-sans text-primary;
+
+  min-height: 100vh;
+}
+
+.bento-card {
+  transform-style: preserve-3d;     
+  transition: transform 0.5s ease;   
+  @apply flex flex-col justify-between 
+}
+
+.bento-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.02);
+}
+
+
+@layer utilities {
+    .span-clip{
+        @apply bg-linear-to-b from-green-600 to-primary bg-clip-text text-transparent
+    }
+
+    .grid-gradient{
+        background-color: #fff;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-attachment: fixed;
+    }
+}

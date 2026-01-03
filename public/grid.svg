@@ -1,0 +1,42 @@
+<svg width="344" height="374" viewBox="0 0 344 374" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_264_1588" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-219" y="-98" width="730" height="472">
+<path d="M186.731 104.754C186.731 159.67 150.422 204.188 105.633 204.188C60.8434 204.188 -218.996 11.5774 -218.996 -43.3382C-218.996 -98.2539 183.078 -22.6523 227.868 -22.6523C272.657 -22.6523 186.731 49.8387 186.731 104.754Z" fill="url(#paint0_linear_264_1588)"/>
+<path d="M310.226 104.905C431.076 214.054 375.25 159.202 479.05 156.439C495.333 159.575 522.976 159.725 503.281 135.227C478.663 104.605 486.597 82.9767 455.831 49.6141C425.064 16.2515 406.327 -17.6443 359.878 -70.7067C313.429 -123.769 309.856 -80.0282 257.491 -84.1747C205.126 -88.3212 229.01 -81.7364 156.759 -4.74516C84.5089 72.2461 189.376 -4.24327 310.226 104.905Z" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_264_1588)">
+<line x1="-108.043" y1="218.763" x2="455.649" y2="218.763" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="339.117" x2="455.649" y2="339.117" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="98.4082" x2="455.649" y2="98.4082" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="158.585" x2="455.649" y2="158.585" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="278.939" x2="455.649" y2="278.939" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="38.2305" x2="455.649" y2="38.2305" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="188.674" x2="455.649" y2="188.674" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="309.028" x2="455.649" y2="309.028" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="68.3194" x2="455.649" y2="68.3194" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="128.496" x2="455.649" y2="128.496" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="248.851" x2="455.649" y2="248.851" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="-108.043" y1="8.14164" x2="455.649" y2="8.14164" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="149.987" y1="-32.4143" x2="149.987" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="29.9077" y1="-32.4143" x2="29.9077" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="270.439" y1="-32.4143" x2="270.439" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="210.399" y1="-32.4143" x2="210.399" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="89.9475" y1="-32.4143" x2="89.9475" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="330.852" y1="-32.4143" x2="330.852" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="180.193" y1="-32.4143" x2="180.193" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="59.7412" y1="-32.4143" x2="59.7412" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="300.645" y1="-32.4143" x2="300.645" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="240.606" y1="-32.4143" x2="240.606" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<line x1="120.154" y1="-32.4143" x2="120.154" y2="339.011" stroke="white" stroke-opacity="0.15" stroke-width="0.470135"/>
+<g opacity="0.7">
+<rect x="210.495" y="278.918" width="29.9177" height="29.9177" fill="white"/>
+<rect x="60.052" y="278.918" width="29.9177" height="29.9177" fill="white"/>
+<rect x="30.134" y="278.918" width="29.9177" height="29.9177" fill="white"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_264_1588" x1="-25.2999" y1="-15.8353" x2="144.184" y2="74.4307" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

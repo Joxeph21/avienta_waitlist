@@ -1,0 +1,275 @@
+<section
+  class="w-full max-w-7xl mx-auto px-5 py-20 flex flex-col items-center gap-16"
+>
+  <div class="text-center flex flex-col gap-4">
+    <h3 class="font-bold text-6xl text-slate-900">
+      The <span class="span-clip">'Magic'</span> behind it
+    </h3>
+    <p class="text-[#807C7C] font-medium">
+      Three powerful features working together to grow your business.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 mt-8 lg:grid-cols-3 gap-6 sm:gap-8">
+    <div
+      class="group relative bg-white rounded-[32px] p-8 border border-slate-200 shadow-sm hover:shadow-2xl hover:shadow-[#25D366]/10 transition-all duration-500 bento-card"
+    >
+      <div>
+        <div
+          class="w-16 h-16 rounded-2xl bg-[#25D366]/10 flex items-center justify-center mb-6 group-hover:bg-[#25D366] transition-colors duration-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 256 256"
+            class="text-[#25D366] group-hover:text-white transition-colors duration-500"
+          >
+            <path
+              fill="currentColor"
+              d="m222.72 67.91l-88-48.18a13.9 13.9 0 0 0-13.44 0l-88 48.18A14 14 0 0 0 26 80.18v95.64a14 14 0 0 0 7.28 12.27l88 48.18a13.92 13.92 0 0 0 13.44 0l88-48.18a14 14 0 0 0 7.28-12.27V80.18a14 14 0 0 0-7.28-12.27M127 30.25a2 2 0 0 1 1.92 0L212.51 76l-33.94 18.57l-84.52-46.26ZM122 223l-83-45.43a2 2 0 0 1-1-1.75V86.66l84 46ZM43.49 76l38.07-20.85l84.51 46.26L128 122.24ZM218 175.82a2 2 0 0 1-1 1.75L134 223v-90.36l36-19.71V152a6 6 0 0 0 12 0v-45.63l36-19.71Z"
+            ></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-slate-900">Smart Inventory</h3>
+        <p class="text-slate-500 mb-8 leading-relaxed">
+          Never run out of stock again. Get proactive alerts before you hit
+          zero.
+        </p>
+      </div>
+      <div class="bg-slate-50 h-52 rounded-2xl p-6 border border-slate-100">
+        <div class="flex justify-between items-center mb-4">
+          <span
+            class="text-sm font-semibold text-slate-400 uppercase tracking-wider"
+            >Stock Level</span
+          >
+          <span
+            class="flex items-center gap-1.5 text-xs text-[#25D366] font-bold bg-[#25D366]/10 px-2.5 py-1 rounded-full"
+          >
+            <span class="w-1.5 h-1.5 animate-pulse rounded-full bg-[#25D366]"
+            ></span> LIVE
+          </span>
+        </div>
+        <div
+          id="stock-text"
+          class="text-5xl font-black text-slate-800 tracking-tight"
+        >
+        </div>
+        <div class="mt-5 h-3 bg-slate-200 rounded-full overflow-hidden">
+          <div
+            id="stock-bar"
+            class="h-full bg-linear-to-r transition-all duration-75 ease-linear"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="group bg-white rounded-[32px] p-8 border border-slate-200 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 bento-card"
+    >
+      <div>
+        <div
+          class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-blue-600 group-hover:text-white transition-colors duration-500"
+            ><rect x="1" y="3" width="15" height="13"></rect><polygon
+              points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle
+              cx="5.5"
+              cy="18.5"
+              r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"
+            ></circle></svg
+          >
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-slate-900">Logistics</h3>
+        <p class="text-slate-500 mb-8 leading-relaxed">
+          Automated pickup and delivery coordination at your fingertips.
+        </p>
+      </div>
+      <div
+        class="bg-slate-50 gap-3 rounded-2xl p-6 border border-slate-100 h-40 flex flex-col justify-center"
+      >
+        <div
+          class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-12"
+        >
+          Real-time Tracker
+        </div>
+        <div class="relative w-full h-1 bg-slate-200 rounded-full">
+          <div
+            class="absolute -top-1.5 left-0 w-4 h-4 rounded-full bg-slate-300 border-2 border-white"
+          >
+          </div>
+          <div
+            class="absolute -top-1.5 right-0 w-4 h-4 rounded-full bg-[#25D366] border-2 border-white shadow-sm"
+          >
+          </div>
+          <div
+            id="van-truck"
+            class="absolute top-1/2 -translate-y-1/2 transition-all duration-75 ease-linear"
+          >
+            <div
+              class="bg-blue-600 p-2 rounded-lg shadow-lg -translate-x-1/2 -mt-10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                ><rect x="1" y="3" width="15" height="13"></rect><polygon
+                  points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon></svg
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          id="van-status"
+          class="pt-10 text-sm font-bold text-blue-600 transition-colors"
+        >
+          <!-- {vanPosition < 50 ? "In Transit to Hub" : "Out for Delivery"} -->
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="group bg-white rounded-[32px] p-8 border border-slate-200 shadow-sm hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 bento-card"
+    >
+      <div
+        class="w-16 h-16 rounded-2xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-purple-600 transition-colors duration-500"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="text-purple-600 group-hover:text-white transition-colors duration-500"
+        >
+          <path
+            d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
+          ></path>
+        </svg>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-3 text-slate-900">
+        Avienta Intelligence
+      </h3>
+      <p class="text-slate-500 mb-8 leading-relaxed">
+        Gain a competitive edge with AI that cross-references your sales
+        performance against global market trends to curate your next bestseller.
+      </p>
+
+      <div class="bg-slate-50 rounded-2xl p-5 border border-slate-100">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-end gap-1 h-12 mb-1 px-2">
+            <div class="w-full bg-slate-200 rounded-t-sm h-[40%]"></div>
+            <div class="w-full bg-slate-200 rounded-t-sm h-[60%]"></div>
+            <div
+              class="w-full bg-purple-400 rounded-t-sm h-[85%] animate-pulse"
+            >
+            </div>
+            <div class="w-full bg-slate-200 rounded-t-sm h-[50%]"></div>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-4 shadow-sm border-l-4 border-purple-500"
+          >
+            <div
+              class="text-[10px] font-bold text-purple-600 uppercase mb-1 tracking-widest"
+            >
+              Predictive Stocking
+            </div>
+            <p class="text-[11px] leading-relaxed text-slate-700 font-medium">
+              "Your analytics show a 40% uptick in festive categories. To
+              maximize
+              <span class="text-slate-900 font-bold">Christmas sales</span>, I
+              recommend stocking
+              <span class="underline decoration-purple-400"
+                >Smart Home Lights</span
+              > by Nov 10th."
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-[9px] bg-blue-50 text-blue-600 px-2 py-1 rounded-md font-bold"
+              >↑ Trending Product</span
+            >
+            <span
+              class="text-[9px] bg-orange-50 text-orange-600 px-2 py-1 rounded-md font-bold"
+              >⚡ Seasonal Opportunity</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  let stockCount = 30;
+  let vanPosition = 0;
+
+  const stockText = document.getElementById("stock-text");
+  const stockBar = document.getElementById("stock-bar");
+  const vanTruck = document.getElementById("van-truck");
+  const vanStatus = document.getElementById("van-status");
+
+  setInterval(() => {
+    stockCount = stockCount >= 99 ? 20 : stockCount + 1;
+
+    // Update UI
+    if (stockText) stockText.innerText = stockCount.toString();
+    if (stockBar) {
+      stockBar.style.width = `${stockCount}%`;
+
+      stockBar.classList.remove(
+        "from-red-300",
+        "to-red-600",
+        "from-yellow-300",
+        "to-yellow-600",
+        "from-[#25D366]",
+        "to-[#1ea952]"
+      );
+
+      if (stockCount < 40) {
+        stockBar.classList.add("from-red-300", "to-red-600");
+      } else if (stockCount < 70) {
+        stockBar.classList.add("from-yellow-300", "to-yellow-600");
+      } else {
+        stockBar.classList.add("from-[#25D366]", "to-[#1ea952]");
+      }
+    }
+  }, 50);
+
+  setInterval(() => {
+    vanPosition = vanPosition >= 100 ? 0 : vanPosition + 1;
+
+    if (vanTruck) {
+      vanTruck.style.left = `${vanPosition}%`;
+    }
+
+    if (vanStatus) {
+      vanStatus.innerText =
+        vanPosition < 50 ? "In Transit to Hub" : "Out for Delivery";
+      vanStatus.className =
+        vanPosition < 50
+          ? "text-sm font-bold text-blue-600 transition-colors"
+          : "text-sm font-bold text-[#25D366] transition-colors";
+    }
+  }, 30);
+</script>
