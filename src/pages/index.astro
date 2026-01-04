@@ -9,12 +9,90 @@ import HowItWorks from "../components/howItWorks.astro";
 import Beta from "../components/beta.astro";
 ---
 
-<Layout>
+<Layout
+  title="Avienta | Run Your Online Store on Autopilot"
+  description="Inventory, Logistics, and AI-Marketing — All in one spot for the busy vendor. Join the Avienta waitlist for early access."
+>
   <!-- <Navbar /> -->
+  <section id="success-container" class="hidden" >
+    <main
+      class="relative overflow-hidden rounded-[2.5rem] bg-[#0A0A0A] text-white border border-white/10 shadow-[0_0_50px_-12px_rgba(37,211,102,0.3)]"
+    >
+      <!-- Glow Effect -->
+      <div
+        class="absolute -top-24 -left-24 w-80 h-80 bg-[#25D366] rounded-full blur-[100px] opacity-20 animate-pulse"
+      >
+      </div>
+
+      <button
+        id="close-modal"
+        class="absolute cursor-pointer top-6 right-6 text-slate-400 hover:text-white transition-colors z-30"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><line x1="18" y1="6" x2="6" y2="18"></line><line
+            x1="6"
+            y1="6"
+            x2="18"
+            y2="18"></line></svg
+        >
+      </button>
+
+      <div class="relative z-10 flex flex-col items-center">
+        <div
+          class="w-20 h-20 rounded-full bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center mb-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#25D366"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="animate-in zoom-in duration-500"
+            ><polyline points="20 6 9 17 4 12"></polyline></svg
+          >
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+          Welcome to the <span class="span-clip from-green-500!"
+            >Inner Circle!</span
+          >
+        </h2>
+
+        <p class="text-slate-300 mb-8 leading-relaxed max-w-[80%] mx-auto">
+          You've successfully joined the waitlist. We're prioritizing vendors
+          like you to build the future of automated commerce.
+        </p>
+
+        <button
+          id="redirect-btn"
+          class="group cursor-pointer relative bg-[#25D366] text-black px-8 py-4 rounded-xl font-bold text-sm transition-all hover:scale-105 active:scale-95 overflow-hidden"
+        >
+          <span class="relative z-10">AWESOME, THANKS!</span>
+          <div
+            class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform"
+          >
+          </div>
+        </button>
+      </div>
+    </main>
+  </section>
   <main class="w-full relative top-0">
     <Hero />
     <section
-      class="w-full min-h-screen border h-full flex-col flex items-center justify-start gap-30 relative py-20 pt-40 z-10 bg-gray-50 overflow-hidden rounded-[90px]"
+      class="w-full min-h-screen border h-full flex-col flex items-center justify-start gap-30 relative py-20 md:pt-40 z-10 bg-gray-50 overflow-hidden rounded-4xl md:rounded-[90px]"
     >
       <PhoneComponent />
       <MagicGrid />

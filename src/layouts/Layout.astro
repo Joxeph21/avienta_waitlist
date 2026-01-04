@@ -1,16 +1,77 @@
 ---
 import "@fontsource-variable/inter";
 import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title = "Join the beta | Avienta",
+  description = "Inventory, Logistics, and AI-Marketing — All in one spot for the busy vendor. Join the Avienta waitlist for early access.",
+  image = "https://avienta.store/logo.png",
+  canonicalURL = new URL(Astro.url.pathname, "https://avienta.store").href,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Global Metadata -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Avienta</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Avienta" />
+    <meta
+      name="keywords"
+      content="e-commerce, ai marketing, inventory management, logistics, automated store, online vendor tools, avienta"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Schema.org Product/Service -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Avienta",
+        "operatingSystem": "Web",
+        "applicationCategory": "BusinessApplication",
+        "description": "AI-Powered Business Management and Automation for Online Vendors.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "NGN"
+        }
+      }
+    </script>
   </head>
   <body class="grid-gradient">
     <slot />

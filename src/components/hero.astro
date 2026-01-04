@@ -1,16 +1,14 @@
+<div id="hero" class="absolute top-0"></div>
 <section
-id="hero"
-  class="w-full z-5 bg-linear-to-b from-transparent to-[#101010] from-90% to-10% flex-col sticky top-0 h-[900px] flex items-center justify-start gap-5 pt-20"
+  class="w-full z-5 bg-linear-to-b from-transparent to-[#101010] from-90% to-10% flex-col sticky top-0 h-[850px] md:h-[900px] flex items-center justify-start gap-5 pt-16 md:pt-20 px-4"
 >
-  <div class="fade-in-section mb-6 sm:mb-8">
+  <div class="fade-in-section mb-4 sm:mb-8">
     <span
-      class="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] text-xs sm:text-sm font-semibold mb-6 sm:mb-8"
+      class="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-green-700/10 border border-green-700/30 text-green-700 text-[10px] sm:text-sm font-semibold mb-4 sm:mb-8"
     >
       <svg
-        class="animate-pulse"
+        class="animate-pulse w-4 h-4 sm:w-6 sm:h-6"
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         ><path
           fill="currentColor"
@@ -20,32 +18,45 @@ id="hero"
       AI-Powered Business Management
     </span>
   </div>
-  <h2 class="text-7xl max-w-[60%] text-center font-bold">
+  <h2
+    class="text-4xl sm:text-6xl lg:text-7xl md:max-w-[80%] lg:max-w-[60%] text-balance text-center font-extrabold md:font-bold px-4"
+  >
     Run Your Online Store on <span class="span-clip">Autopilot</span>
   </h2>
-  <p class="text-[#807C7C] font-medium">
+  <p
+    class="text-[#807C7C] text-center font-medium px-6 max-w-2xl text-sm sm:text-base"
+  >
     Inventory, Logistics, and AI-Marketing — All in one spot for the busy
     vendor.
   </p>
   <form
-    class="flex mt-24 items-center gap-2 p-1.5 bg-white border border-gray-200 rounded-full max-w-md w-full focus-within:border-secondary focus-within:ring-4 focus-within:ring-secondary/5 transition-all"
+    id="form-container"
+    class="flex flex-col sm:flex-row mt-12 sm:mt-24 items-center gap-2 p-1.5 bg-white border border-gray-200 rounded-2xl sm:rounded-full max-w-md w-full focus-within:border-secondary focus-within:ring-4 focus-within:ring-secondary/5 transition-all"
   >
     <input
+      id="email-input"
       type="email"
       placeholder="Enter your email address"
-      class="flex-1 px-5 py-2 outline-none bg-transparent placeholder:text-placeholder text-primary"
+      class="w-full sm:flex-1 px-5 py-3 sm:py-2 outline-none bg-transparent placeholder:text-placeholder text-primary text-center sm:text-left"
       required
     />
+    <!-- Honeypot field for bot protection -->
+    <div style="display:none">
+      <label>Leave this field empty</label>
+      <input type="text" name="honeypot" id="honeypot" />
+    </div>
     <button
+      id="btn-submit"
       type="submit"
-      class="bg-primary text-white px-8 py-3 rounded-full font-medium hover:opacity-80 transition-all active:scale-95 cursor-pointer"
+      disabled
+      class="w-full disabled:opacity-50 disabled:cursor-not-allowed sm:w-auto bg-primary text-white px-8 py-3 rounded-xl sm:rounded-full font-medium hover:opacity-80 transition-all active:scale-95 cursor-pointer"
     >
       Join Waitlist
     </button>
   </form>
 
   <div
-    class="gap-8 text-xs flex items-center sticky bottom-10 sm:text-sm text-gray-500"
+    class="gap-4 sm:gap-8 text-[10px] sm:text-sm flex flex-col sm:flex-row items-center sticky bottom-10 text-gray-500 mb-10"
   >
     <div class="flex items-center gap-2">
       <div class="w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></div>
@@ -59,12 +70,140 @@ id="hero"
 
   <div class="absolute inset-0 -z-10 overflow-hidden">
     <div
-      class="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-[#25D366]/10 rounded-full blur-3xl"
+      class="absolute top-1/4 left-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-[#25D366]/10 rounded-full blur-3xl"
     >
     </div>
     <div
-      class="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-[#25D366]/5 rounded-full blur-3xl"
+      class="absolute bottom-1/4 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-[#25D366]/5 rounded-full blur-3xl"
     >
     </div>
   </div>
 </section>
+
+<script>
+  import { toast } from "../scripts/toast";
+  import { supabase } from "../supabase";
+  window.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector("#form-container");
+    const emailInput = document.querySelector(
+      "#email-input"
+    ) as HTMLInputElement;
+    const submitBtn = document.querySelector(
+      "#btn-submit"
+    ) as HTMLButtonElement;
+
+    const honeypot = document.querySelector("#honeypot") as HTMLInputElement;
+    let isInputTouched = false;
+
+    const validateEmail = (email: string) => {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
+    const handleValidation = () => {
+      const email = emailInput.value.trim();
+      const isValid = validateEmail(email);
+      submitBtn.disabled = !isValid;
+
+      // Only show error styling if the user has interacted or if autocompleted incorrectly
+      if (isInputTouched || email.length > 3) {
+        if (!isValid) {
+          container?.classList.add("error");
+        } else {
+          container?.classList.remove("error");
+        }
+      }
+    };
+
+    // Run initial validation check for browser autocompletion
+    handleValidation();
+
+    emailInput.addEventListener("input", () => {
+      isInputTouched = true;
+      handleValidation();
+    });
+
+    const successModal = document.querySelector("#success-container");
+    const closeModal = document.querySelector("#close-modal");
+    const redirectBtn = document.querySelector("#redirect-btn");
+
+    const toggleModal = (show: boolean) => {
+      if (!successModal || !successModal.querySelector("main")) return;
+      const modalContent = successModal.querySelector("main") as HTMLElement;
+
+      if (show) {
+        successModal.classList.remove("hidden");
+        modalContent.classList.remove("hide");
+        document.body.style.overflow = "hidden";
+      } else {
+        modalContent.classList.add("hide");
+
+        modalContent.onanimationend = () => {
+          successModal.classList.add("hidden");
+          modalContent.classList.remove("hide");
+          document.body.style.overflow = "";
+          modalContent.onanimationend = null;
+        };
+      }
+    };
+
+    if (closeModal)
+      closeModal.addEventListener("click", () => toggleModal(false));
+    if (redirectBtn)
+      redirectBtn.addEventListener("click", () => toggleModal(false));
+
+    successModal?.addEventListener("click", (e) => {
+      if (e.target === successModal) toggleModal(false);
+    });
+
+    if (container) {
+      container.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Bot check: If the hidden honeypot field is filled, silently reject
+        if (honeypot && honeypot.value) {
+          console.warn("Bot detected.");
+          handleReset();
+          return;
+        }
+
+        const email = emailInput.value.trim();
+
+        if (!email) return;
+
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Joining...";
+
+        try {
+          const { error } = await supabase
+            .from("avienta_table")
+            .insert({ email });
+
+          if (error) {
+            if (error.code.toString() === "23505") {
+              toast.error("You are already on the waitlist.");
+            } else {
+              toast.error("Something went wrong. Please try again.");
+            }
+            return null;
+          }
+
+          toggleModal(true);
+          toast.success("Welcome aboard!");
+          handleReset();
+        } catch (err) {
+          toast.error("Something went wrong. Please try again.");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Join Waitlist";
+        }
+      });
+    }
+
+    const handleReset = () => {
+      emailInput.value = "";
+      submitBtn.disabled = true;
+      container?.classList.remove("error");
+      isInputTouched = false;
+    };
+  });
+</script>
