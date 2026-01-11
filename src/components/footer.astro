@@ -1,14 +1,53 @@
+---
+import { SOCIAL_LINKS, SUPPORT_EMAIL } from "../utils/config";
+---
+
 <footer
-  class="w-full px-4 py-10 md:px-10 flex flex-col justify-end h-48 bg-[#101010] text-white"
+  class="w-full px-4 py-10 md:px-10 flex flex-col justify-end bg-[#101010] text-white"
   aria-label="Site Footer"
 >
-  <p
-    class="text-lg md:text-3xl bg-linear-to-b from-white via-white to-primary bg-clip-text text-transparent font-bold tracking-wider uppercase"
+  <div
+    class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-4"
   >
-    Avienta
-  </p>
-  <hr class="border-t my-2 border-placeholder bg-none w-full" />
-  <p class="font-medium text-xs text-right mt-1">
-    Avienta © {new Date().getFullYear()}. All rights reserved.
-  </p>
+    {/* Brand Section */}
+    <div>
+      <p
+        class="text-2xl md:text-4xl bg-linear-to-b from-white via-white to-primary bg-clip-text text-transparent font-bold tracking-wider uppercase"
+      >
+        Avienta
+      </p>
+    </div>
+
+    {/* Social Links Section */}
+    <div class="flex flex-wrap gap-4 md:gap-6">
+      {
+        SOCIAL_LINKS.map((link) => (
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs font-medium uppercase tracking-widest hover:text-primary transition-colors duration-200"
+          >
+            {link.name}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <hr class="border-t border-white/10 bg-none w-full" />
+  <div class="flex md:flex-row flex-col justify-between gap-3 md:items-center">
+    <p class="font-medium text-[10px] md:text-xs mt-2 opacity-60">
+      Contact us: <a
+        href={`mailto:${SUPPORT_EMAIL}`}
+        class="text-xs text-gray-400 hover:text-white transition-colors duration-200"
+      >
+        {SUPPORT_EMAIL}
+      </a>
+    </p>
+
+    <p class="font-medium text-[10px] md:text-xs text-right mt-2 opacity-60">
+      Avienta © {new Date().getFullYear()}. All rights reserved.
+    </p>
+  </div>
 </footer>
