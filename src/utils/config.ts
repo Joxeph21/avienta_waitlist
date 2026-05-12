@@ -1,7 +1,7 @@
 export const SOCIAL_LINKS = [
   { name: "Instagram", url: "https://www.instagram.com/officialavienta" },
   { name: "X", url: "https://x.com/officialavienta" },
-//   { name: "LinkedIn", url: "https://www.linkedin.com/company/avienta-store/" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/company/officialavienta" },
   { name: "Facebook", url: "https://web.facebook.com/profile.php?id=61586371139627" },
 ];
 
