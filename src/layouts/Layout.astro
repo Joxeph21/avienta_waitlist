@@ -77,6 +77,11 @@ const {
         }
       }
     </script>
+    <!-- Vercel Web Analytics -->
+    <script is:inline>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js" is:inline></script>
   </head>
   <body class="grid-gradient">
     <slot />
